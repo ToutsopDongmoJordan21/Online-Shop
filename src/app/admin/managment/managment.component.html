@@ -1,0 +1,113 @@
+<div class="row">
+  <div class="col-4">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>category</mat-card-title>
+        <mat-card-subtitle> Create category</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <form
+          [formGroup]="categoryForm"
+        >
+          <mat-form-field>
+            <label>name</label>
+            <input formControlName="name" matInput/>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>description</mat-label>
+            <input formControlName="description" matInput type="text"/>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="createCategory()" color="primary" mat-raised-button>
+          submit
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+<div class="col-5">
+  <div *ngFor="let item of allCategory">
+    <div><a (click)="selectCategory(item)">
+    <span>
+      {{ item.name}}
+    </span>
+      <span>
+      {{ item.description}}
+    </span>
+    </a>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="selectedCategory" class="row">
+  <div class="col-4">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Product</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form
+        [formGroup]="productForm">
+        <mat-form-field>
+          <mat-label>name</mat-label>
+          <input formControlName="name" matInput/>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>description</mat-label>
+          <input formControlName="description" matInput type="text"/>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>price</mat-label>
+          <input formControlName="price" matInput type="price"/>
+        </mat-form-field>
+
+        <input #fileUpload (change)="onFileSelected($event)"
+               class="file-input" type="file">
+
+        <div class="file-upload">
+
+          {{fileName || "No file uploaded yet."}}
+          {{uploadMessage}}
+
+          <button (click)="fileUpload.click()" class="upload-btn" color="primary"
+                  mat-mini-fab>
+            <mat-icon>attach_file</mat-icon>
+          </button>
+        </div>
+
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="createProduct()" [disabled]="checkDisable()" color="primary" mat-raised-button>
+        submit
+      </button>
+
+    </mat-card-actions>
+  </mat-card>
+  </div>
+
+<div class="col-4">
+  <div *ngFor="let item of productsCategory">
+    <div>
+       <span>
+      {{ item.name}}
+    </span>
+      <span>
+      {{ item.description}}
+    </span>
+      <span>
+      {{ item.price}}
+    </span>
+      <span>
+      <a (click)="selectCategory(item)" href="{{ item.imageUrl}}"> image</a>
+      </span>
+    </div>
+  </div>
+</div>
+</div>
+
+
+

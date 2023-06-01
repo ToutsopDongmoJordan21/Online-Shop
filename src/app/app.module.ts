@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { DetailsProductComponent } from './details-product/details-product.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {AdminModule} from "./admin/admin.module";
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { DetailsProductComponent } from './details-product/details-product.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
