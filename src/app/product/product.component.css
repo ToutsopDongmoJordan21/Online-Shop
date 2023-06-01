@@ -2,7 +2,11 @@
     border-color: #3b71ca !important;
     background-color: white !important;
   }
-  
+
 .icon-hover:hover i {
     color: #3b71ca !important;
   }
+
+.details {
+  color: rgb(65, 61, 61);
+}
