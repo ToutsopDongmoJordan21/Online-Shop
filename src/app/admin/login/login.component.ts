@@ -16,6 +16,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   public loginForm!: FormGroup;
+  showErrorMessage=false;
+
   constructor(
     private router: Router
   ) { }
@@ -27,6 +29,7 @@ export class LoginComponent implements OnInit {
     });
   }
 login(){
+    this.showErrorMessage=false;
   const firebaseApp = firebase.initializeApp(environment.firebaseConfig);
   const auth = firebase.auth();
   auth.signInWithEmailAndPassword( this.loginForm.get('username')!.value,  this.loginForm!.get('password')!.value)
@@ -37,6 +40,7 @@ login(){
       // ...
     })
     .catch((error) => {
+      this.showErrorMessage = true;
       var errorCode = error.code;
       var errorMessage = error.message;
     });
