@@ -1,4 +1,10 @@
-.example-card {
+/* .example-card {
   max-width: 400px;
   background-color: #b3d7ff;
-}
+} */
+
+@media (min-width: 1025px) {
+  .h-custom {
+  height: 100vh !important;
+  }
+  }

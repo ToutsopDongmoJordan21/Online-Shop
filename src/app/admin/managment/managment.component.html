@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
   <div class="col-4">
     <mat-card class="example-card">
       <mat-card-header>
@@ -111,3 +111,168 @@
 
 
 
+ -->
+
+ <section class="vh-80" style="background-color: rgb(107, 104, 104);">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img src="../../../assets/images/image1.jpg"
+                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+
+                <form [formGroup]="categoryForm">
+
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <span class="h1 fw-bold mb-0">Create Category</span>
+                  </div>
+
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Enter Informations</h5>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" formControlName="name"  class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example17">Name</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" formControlName="description" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example27">Description</label>
+                  </div>
+
+                  <div class="pt-1 mb-4">
+                    <button class="btn btn-dark btn-lg btn-block" (click)="createCategory()" type="button">create</button>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5 h-100" *ngIf="selectedCategory">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img src="../../../assets/images/image1.jpg"
+                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; margin-top: 20%;" />
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+
+                <form [formGroup]="productForm">
+
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <span class="h1 fw-bold mb-0">Create Product</span>
+                  </div>
+
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Enter Informations</h5>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" formControlName="name"  class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example17">Name</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" formControlName="description" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example27">Description</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="price" formControlName="price" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example27">Item Price</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input #fileUpload (change)="onFileSelected($event)" class="file-input" type="file">
+                  </div>
+
+                  <div class="pt-1 mb-4 file-upload">
+
+                    {{fileName || "No file uploaded yet."}}
+                    {{uploadMessage}}
+
+                    <button class="upload-btn" color="primary" (click)="fileUpload.click()" mat-mini-fab>
+                      <mat-icon>attach_file</mat-icon>
+                    </button>
+                  </div>
+
+                </form>
+                <div class="pt-1 mb-4">
+                  <button class="btn btn-dark btn-lg btn-block" (click)="createProduct()" [disabled]="checkDisable()" type="button">create</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+
+            <table class="table">
+              <thead class="table-dark">
+                <tr>
+                  <th>Categorie Name</th>
+                  <th>Categorie Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of allCategory" (click)="selectCategory(item)">
+                  <td>{{ item.name}}</td>
+                  <td>{{ item.description}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+
+            <table class="table">
+              <thead class="table-dark">
+                <tr>
+                  <th>Product Name</th>
+                  <th>Product Description</th>
+                  <th>Product Price</th>
+                  <th>Product Image</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of productsCategory">
+                  <td>{{ item.name}}</td>
+                  <td>{{ item.description}}</td>
+                  <td>{{ item.price}}</td>
+                  <td><img src="{{ item.imageUrl}}" style="width: 40px;" /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

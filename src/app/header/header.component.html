@@ -62,26 +62,8 @@
         <div class="collapse navbar-collapse" id="navbarLeftAlignExample">
           <!-- Left links -->
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item" style="margin-left: 250px;">
-              <a class="nav-link text-dark" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" routerLink="produit">Categories</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" routerLink="produit">Hot offers</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" routerLink="produit">Gift boxes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" routerLink="produit">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" routerLink="produit">Menu item</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" routerLink="produit">Menu name</a>
+            <li class="nav-item" style="margin-left: 250px;" *ngFor="let item of allCategory">
+              <a class="nav-link text-dark" aria-current="page" (click)="selectCategory(item)"> {{ item.name}}</a>
             </li>
           </ul>
           <!-- Left links -->
