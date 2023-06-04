@@ -11,7 +11,7 @@ import {ManagmentComponent} from "./admin/managment/managment.component";
 const routes: Routes = [
   { path: '', component: ProductComponent},
   { path: 'produit', component: ProductComponent},
-  { path: 'details', component: DetailsProductComponent},
+  { path: 'details/:id', component: DetailsProductComponent},
   { path: 'about', component: AboutComponent},
   { path: 'contact', component: ContactComponent},
   { path: 'admin/login', component: LoginComponent},

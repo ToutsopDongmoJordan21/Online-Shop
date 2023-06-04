@@ -16,7 +16,7 @@ export class Product {
   description: string | undefined;
   price: number | undefined;
   categoryId: string | undefined;
-  id: string | undefined;
+  id: any;
   imageUrl: string | undefined ;
 };
 
