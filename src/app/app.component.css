@@ -4,6 +4,19 @@
   overflow: hidden;
   z-index: 10;
   width: 100%;
-  margin-top:1100px;
+  margin-top:800px;
   margin-left: 80px;
 }
+
+@media (max-width: 3500px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:1100px;
+    margin-left: 80px;
+  }
+}
+
