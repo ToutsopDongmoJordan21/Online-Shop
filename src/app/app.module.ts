@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 import { DetailsProductComponent } from './details-product/details-product.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AdminModule} from "./admin/admin.module";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {AdminModule} from "./admin/admin.module";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AdminModule
+    AdminModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

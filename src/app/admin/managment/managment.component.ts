@@ -74,6 +74,7 @@ public uploadMessage: any;
       .catch((error:any) => {
         console.error("Error writing document: ", error);
       });
+    this.allCategory=[];
     this.getAllCategory();
 
   }
@@ -103,15 +104,16 @@ public uploadMessage: any;
 
   selectCategory( item: Category){
     this.selectedCategory= item;
+    this.productsCategory=[];
     this.getAllbyCategory();
   }
 
   createProduct(){
     // @ts-ignore
-    this.db.collection("category").doc(this.selectedCategory?.id).collection('product').doc().set({
+    this.db.collection('product').doc().set({
       name: this.productForm.get('name')!.value,
       // @ts-ignore
-      categoryId: 'this.selectedCategory.id',
+      categoryId: this.selectedCategory.id,
       description: this.productForm.get('description')!.value,
       price: this.productForm.get('price')!.value,
       image: this.imageUrl
@@ -122,15 +124,17 @@ public uploadMessage: any;
       .catch((error:any) => {
         console.error("Error writing document: ", error);
       });
-
+this.productsCategory=[];
     this.getAllbyCategory()
+    // @ts-ignore
+    this.productForm = new FormGroup()
 
   }
 
   async getAllbyCategory(){
 
 
-    const collection = await this.db.collection('category').doc(this.selectedCategory?.id).collection('product').get()
+    const collection = await this.db.collection('product').where('categoryId','==',this.selectedCategory?.id).get()
       // @ts-ignore
       .then(snapshot => {
         // @ts-ignore
