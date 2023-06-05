@@ -32,6 +32,7 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     this. getAllCategory();
+    this.getAllProduct();
   }
 
   async getAllCategory(){
@@ -64,9 +65,37 @@ export class ProductComponent implements OnInit {
   }
 
   async getAllbyCategory(){
+    this.productsCategory=[];
 
+    const collection = await this.db.collection('product').where('categoryId','==',this.selectedCategory?.id).get()
+      // @ts-ignore
+      .then(snapshot => {
+        // @ts-ignore
+        snapshot.forEach( doc => {
+          const  product= new Product();
+          product.id = doc.id;
+          product.name= doc.data()['name'];
+          product.description = doc.data()['description'];
+          product.price= doc.data()['price'];
+          product.imageUrl= doc.data()['image'];
+          product.price= doc.data()['price'];
+          console.log(doc.data());
+          this.productsCategory.push(product);
+        });
+      })
+      // @ts-ignore
+      .catch(err => {
+        console.log('Error getting documents', err);
+      });
 
-    const collection = await this.db.collection('category').doc(this.selectedCategory?.id).collection('product').get()
+    console.log(this.productsCategory);
+
+  }
+  async getAllProduct(){
+    this.productsCategory=[];
+
+    const collection = await this.db.collection('product').get()
+
       // @ts-ignore
       .then(snapshot => {
         // @ts-ignore
@@ -94,5 +123,6 @@ export class ProductComponent implements OnInit {
   direct(id: number) {
     this.router.navigate(['details', id]);
   }
+
 
 }

@@ -1,4 +1,6 @@
 <app-header></app-header>
 <router-outlet></router-outlet>
-
+<div #stickyMenu [class.sticky] = "sticky">
+  <i class='fab fa-whatsapp-square fa-beat fa-5x'style="color: #0bf933;" (click)="whatsappMessage()" ></i>
+</div>
   <app-footer></app-footer>

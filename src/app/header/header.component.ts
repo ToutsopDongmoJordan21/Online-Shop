@@ -66,7 +66,7 @@ export class HeaderComponent implements OnInit {
   async getAllbyCategory(){
 
 
-    const collection = await this.db.collection('category').doc(this.selectedCategory?.id).collection('product').get()
+    const collection = await this.db.collection('product').where('categoryId', '==', this.selectedCategory?.id).get()
       // @ts-ignore
       .then(snapshot => {
         // @ts-ignore
