@@ -38,13 +38,8 @@
             <h6 class="text-uppercase text-dark fw-bold mb-2">
               Product Categories
             </h6>
-            <ul class="list-unstyled mb-4">
-              <li><a class="text-muted" href="#">Categories</a></li>
-              <li><a class="text-muted" href="#">Hot offers</a></li>
-              <li><a class="text-muted" href="#">Gift boxes</a></li>
-              <li><a class="text-muted" href="#">Projects</a></li>
-              <li><a class="text-muted" href="#">Menu item</a></li>
-              <li><a class="text-muted" href="#">Menu name</a></li>
+            <ul class="list-unstyled mb-4" *ngFor="let item of allCategory">
+              <li><a class="text-muted" href="#">{{item.name}}</a></li>
             </ul>
           </div>
           <!-- Grid column -->
@@ -55,23 +50,12 @@
             <h6 class="text-uppercase text-dark fw-bold mb-2">
               Product
             </h6>
-            <ul class="list-unstyled mb-4">
+            <ul class="list-unstyled mb-4" *ngFor="let it of productsCategory" >
+
               <li style="display: block; margin-top: 10%;">
-                <img src="../../assets/images/image2.jpg" height="40"/>
-                  <a class="text-muted" href="#" style="margin-left: 10px;">LSD Sheet </a>
+                <img src="{{it.imageUrl}}" height="40"/>
+                  <a class="text-muted" style="margin-left: 10px;" (click)="getDetail(it)" >{{it.name}} </a>
               </li>
-              <li style="margin-top: 06%;">
-                <img src="../../assets/images/image2.jpg" height="40"/>
-                <a class="text-muted" href="#" style="margin-left: 10px;">LSD Sheet </a>
-            </li>
-              <li style="margin-top: 06%;">
-                <img src="../../assets/images/image2.jpg" height="40"/>
-                <a class="text-muted" href="#" style="margin-left: 10px;">LSD Sheet </a>
-            </li>
-              <li style="margin-top: 06%;">
-                <img src="../../assets/images/image2.jpg" height="40"/>
-                <a class="text-muted" href="#" style="margin-left: 10px;">LSD Sheet </a>
-            </li>
             </ul>
           </div>
           <!-- Grid column -->
