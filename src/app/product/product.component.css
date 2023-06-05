@@ -10,3 +10,12 @@
 .details {
   color: rgb(65, 61, 61);
 }
+
+.sticky{
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  z-index: 10;
+  width: 100%;
+  margin-top: 70px;
+}

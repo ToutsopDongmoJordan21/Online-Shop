@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import firebase from 'firebase/compat/app';
 import { getStorage, ref } from 'firebase/storage';
@@ -12,6 +12,8 @@ import { Category, Product } from '../admin/managment/managment.component';
 })
 export class ProductComponent implements OnInit {
 
+  @ViewChild('stickyMenu') menuElement!: ElementRef;
+
   public allCategory: Array<Category> = [];
   public selectedCategory: Category | undefined;
   public productsCategory: Array<Product> = [];
@@ -20,6 +22,8 @@ export class ProductComponent implements OnInit {
   public storageRef: any;
   public uploadMessage: any;
   public firebaseApp : any;
+  sticky: boolean = false;
+  elementPosition: any;
 
   constructor(
     private router: Router,) {
@@ -35,7 +39,23 @@ export class ProductComponent implements OnInit {
     this.getAllProduct();
   }
 
+  ngAfterViewInit(){
+    this.elementPosition = this.menuElement.nativeElement.offsetTop;
+  }
+
+  @HostListener('window:scroll', ['$event'])
+    handleScroll(){
+      const windowScroll = window.pageYOffset;
+      if(windowScroll >= this.elementPosition){
+        this.sticky = true;
+      } else {
+        this.sticky = true;
+      }
+    }
+
   async getAllCategory(){
+
+    console.log('startttttttt');
 
 
     const collection = await this.db.collection('category').get()
@@ -48,6 +68,7 @@ export class ProductComponent implements OnInit {
           category.name= doc.data()['name'];
           category.description = doc.data()['description'];
           this.allCategory.push(category);
+          console.log('enter');
         });
       })
       // @ts-ignore
