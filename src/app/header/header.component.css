@@ -2,11 +2,19 @@
     border-color: #3b71ca !important;
     background-color: white !important;
   }
-  
+
   .icon-hover:hover i {
     color: #3b71ca !important;
   }
 
   .a .active {
     color: #9FC5F8 !important;
+  }
+
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
   }

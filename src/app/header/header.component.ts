@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Category, Product } from '../admin/managment/managment.component';
 import firebase from 'firebase/compat/app';
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
@@ -14,6 +14,8 @@ import { environment } from 'src/environments/environment';
 })
 export class HeaderComponent implements OnInit {
 
+  @ViewChild('stickyMenu') menuElement!: ElementRef;
+
   public allCategory: Array<Category> = [];
   public selectedCategory: Category | undefined;
   public productsCategory: Array<Product> = [];
@@ -22,6 +24,8 @@ export class HeaderComponent implements OnInit {
   public storageRef: any;
   public uploadMessage: any;
   public firebaseApp : any;
+  sticky: boolean = false;
+  elementPosition: any;
 
   constructor() {
     this.firebaseApp = firebase.initializeApp(environment.firebaseConfig);
@@ -33,6 +37,20 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this. getAllCategory();
   }
+
+  ngAfterViewInit(){
+    this.elementPosition = this.menuElement.nativeElement.offsetTop;
+  }
+
+  @HostListener('window:scroll', ['$event'])
+    handleScroll(){
+      const windowScroll = window.pageYOffset;
+      if(windowScroll >= this.elementPosition){
+        this.sticky = true;
+      } else {
+        this.sticky = true;
+      }
+    }
 
   async getAllCategory(){
 
