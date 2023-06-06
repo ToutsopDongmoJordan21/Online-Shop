@@ -8,7 +8,7 @@
   margin-left: 80px;
 }
 
-@media (min-width: 3000px) {
+@media (max-width: 3000px) {
   .sticky{
     position: fixed;
     top: 0;
@@ -16,7 +16,263 @@
     z-index: 10;
     width: 100%;
     margin-top:1100px;
+    margin-left:-180px;
+  }
+}
+
+
+@media (max-width: 927px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:500px;
     margin-left: 80px;
+  }
+}
+
+@media (max-width: 414px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:640px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 375px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:540px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 540px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:580px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 280px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:580px;
+    margin-left: 20px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:1090px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 375px) {
+  @media (height: 812px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:690px;
+    margin-left: 20px;
+  }
+}
+}
+
+@media (max-width: 320px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:440px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:500px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:500px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:500px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:500px;
+    margin-left: 60px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:500px;
+    margin-left: 60px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:500px;
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 2000px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:1000px;
+    margin-left: 180px;
+  }
+}
+
+@media (max-width: 3000px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:500px;
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 4000px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:500px;
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 5000px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:500px;
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 6000px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:500px;
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 411px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:640px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    margin-top:560px;
+    margin-left: 20px;
   }
 }
 

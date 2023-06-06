@@ -18,8 +18,14 @@
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarLeftAlignExample">
       <!-- Left links -->
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item" style="margin-left: 250px;" *ngFor="let item of allCategory">
+      <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item" *ngFor="let item of allCategory">
+          <a class="nav-link text-dark" aria-current="page" (click)="selectCategory(item)"> {{ item.name}}</a>
+        </li>
+      </ul> -->
+
+      <ul class="row navbar-nav me-auto mb-0 mb-lg-0">
+        <li class="col-md-1 col-sm-3 d-flex" *ngFor="let item of allCategory">
           <a class="nav-link text-dark" aria-current="page" (click)="selectCategory(item)"> {{ item.name}}</a>
         </li>
       </ul>
@@ -31,10 +37,10 @@
 
 
 <!-- Products -->
-  <section>
+  <section style="margin-top: 15%;">
     <div class="container my-5">
       <header class="mb-4">
-        <h3>New products</h3>
+        <h2><b>New products</b></h2>
       </header>
 
       <div class="row">

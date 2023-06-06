@@ -70,6 +70,7 @@ public uploadMessage: any;
     })
       .then(() => {
         console.log("Document successfully written!");
+        alert('Category was successfuly created');
       })
       .catch((error:any) => {
         console.error("Error writing document: ", error);
@@ -120,6 +121,7 @@ public uploadMessage: any;
     })
       .then(() => {
         console.log("Document successfully written!");
+        alert('Product was successfuly created');
       })
       .catch((error:any) => {
         console.error("Error writing document: ", error);
