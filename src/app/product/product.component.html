@@ -16,16 +16,10 @@
     </button>
 
     <!-- Collapsible wrapper -->
-    <div class="collapse navbar-collapse" id="navbarLeftAlignExample">
-      <!-- Left links -->
-      <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item" *ngFor="let item of allCategory">
-          <a class="nav-link text-dark" aria-current="page" (click)="selectCategory(item)"> {{ item.name}}</a>
-        </li>
-      </ul> -->
+    <div class="scrollmenu collapse navbar-collapse" id="navbarLeftAlignExample">
 
-      <ul class="row navbar-nav me-auto mb-0 mb-lg-0">
-        <li class="col-md-1 col-sm-3 d-flex" *ngFor="let item of allCategory">
+      <ul class="navbar-nav me-auto mb-0 mb-lg-0">
+        <li class="nav-item d-flex" *ngFor="let item of allCategory">
           <a class="nav-link text-dark" aria-current="page" (click)="selectCategory(item)"> {{ item.name}}</a>
         </li>
       </ul>
@@ -37,7 +31,7 @@
 
 
 <!-- Products -->
-  <section style="margin-top: 15%;">
+  <section style="margin-top: 13%;">
     <div class="container my-5">
       <header class="mb-4">
         <h2><b>New products</b></h2>

@@ -19,3 +19,47 @@
   width: 100%;
   margin-top: 70px;
 }
+
+div.scrollmenu {
+  background-color: white;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu ul li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  background-color: #386bc0;
+  color: white !important;
+}
+
+/* @media (max-width: 991px) {
+  div.scrollmenu {
+  background-color: rgb(243, 13, 13) !important;
+  overflow: auto!important;
+  white-space: nowrap!important;
+  display: inline-block!important;
+  vertical-align: middle!important;
+}
+
+div.scrollmenu ul li a {
+  display: inline-block!important;
+  color: white;
+  text-align: center!important;
+  padding: 14px!important;
+  text-decoration: none!important;
+}
+
+div.scrollmenu a:hover {
+  background-color: #386bc0!important;
+  color: white !important;
+}
+} */
+
+
