@@ -14,7 +14,11 @@ export class AppComponent {
   elementPosition: any;
 
   whatsappMessage(){
-    window.location.href='https://wa.me/679181026?text=Hi, I saw the product that you are selling and I want to get more details';
+    window.location.href='https://wa.me/17472219758?text=Hi, I saw the product that you are selling and I want to get more details';
+  }
+
+  telegramMessage(){
+    window.location.href='https://t.me/numinuspsychedelics';
   }
 
   ngAfterViewInit(){
