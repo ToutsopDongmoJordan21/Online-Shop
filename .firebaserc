@@ -1,5 +1,14 @@
 {
   "projects": {
-    "default": "online-shopping-f476e"
+    "default": "online-shopping-f9a2a"
+  },
+  "targets": {
+    "online-shopping-f9a2a": {
+      "hosting": {
+        "online-shop": [
+          "online-shopping-f9a2a"
+        ]
+      }
+    }
   }
 }
