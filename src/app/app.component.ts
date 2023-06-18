@@ -17,6 +17,10 @@ export class AppComponent {
     window.location.href='https://wa.me/679181026?text=Hi, I saw the product that you are selling and I want to get more details';
   }
 
+  telegramMessage(){
+    window.location.href='https://wa.me/679181026?text=Hi, I saw the product that you are selling and I want to get more details';
+  }
+
   ngAfterViewInit(){
     this.elementPosition = this.menuElement.nativeElement.offsetTop;
   }

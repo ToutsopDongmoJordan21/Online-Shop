@@ -52,6 +52,18 @@ export class FooterComponent implements OnInit {
 
     console.log(this.productsCategory);
 
+    let fixProduct = Array.of(Product);
+    for(let i =0; i<4; i++){
+      if( this.productsCategory.length <= i){
+        break
+      }
+      // @ts-ignore
+      fixProduct.push(this.productsCategory[i]);
+    }
+
+    // @ts-ignore
+    this.productsCategory=fixProduct;
+
   }
 
   async getAllCategory(){
@@ -75,6 +87,17 @@ export class FooterComponent implements OnInit {
       });
 
     console.log(this.allCategory);
+    let fixCaterogry = Array.of(Category);
+    for(let i =0; i<6; i++){
+      if( this.allCategory.length <= i){
+        break
+      }
+      // @ts-ignore
+      fixCaterogry.push(this.allCategory[i]);
+    }
+
+    // @ts-ignore
+    this.allCategory=fixCaterogry;
 
   }
   getDetail(item:Product){
